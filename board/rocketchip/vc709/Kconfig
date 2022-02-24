@@ -1,0 +1,26 @@
+if TARGET_ROCKETCHIP_VC709
+
+config SYS_BOARD
+	default "vc709"
+
+config SYS_VENDOR
+	default "rocketchip"
+
+config SYS_CPU
+	default "generic"
+
+config SYS_CONFIG_NAME
+	default "vc709"
+
+config SYS_TEXT_BASE
+	default 0x80000000
+
+config BOARD_SPECIFIC_OPTIONS # dummy
+	def_bool y
+	select GENERIC_RISCV
+	imply SMP
+	imply BOARD_LATE_INIT
+	imply SYS_NS16550
+
+endif
+

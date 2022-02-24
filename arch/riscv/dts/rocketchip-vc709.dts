@@ -1,0 +1,384 @@
+/dts-v1/;
+
+/ {
+	#address-cells = <2>;
+	#size-cells = <2>;
+	compatible = "freechips,rocketchip-unknown-dev";
+	model = "freechips,rocketchip-unknown";
+	L47: aliases {
+		serial0 = &L32;
+		serial1 = &L33;
+		serial2 = &L34;
+	};
+	L41: chosen {
+	};
+	L46: cpus {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		timebase-frequency = <1000000>;
+		L6: cpu@0 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <2>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39,sv39x4";
+			next-level-cache = <&L3>;
+			reg = <0x0>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4096>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L4: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L9: cpu@1 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <2>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39,sv39x4";
+			next-level-cache = <&L3>;
+			reg = <0x1>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4096>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L7: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L12: cpu@2 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <2>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39,sv39x4";
+			next-level-cache = <&L3>;
+			reg = <0x2>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4096>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L10: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L15: cpu@3 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <2>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39,sv39x4";
+			next-level-cache = <&L3>;
+			reg = <0x3>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4096>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L13: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L18: cpu@4 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <2>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39,sv39x4";
+			next-level-cache = <&L3>;
+			reg = <0x4>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4096>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L16: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+		L21: cpu@5 {
+			clock-frequency = <0>;
+			compatible = "sifive,rocket0", "riscv";
+			d-cache-block-size = <64>;
+			d-cache-sets = <64>;
+			d-cache-size = <16384>;
+			d-tlb-sets = <1>;
+			d-tlb-size = <32>;
+			device_type = "cpu";
+			hardware-exec-breakpoint-count = <2>;
+			i-cache-block-size = <64>;
+			i-cache-sets = <64>;
+			i-cache-size = <16384>;
+			i-tlb-sets = <1>;
+			i-tlb-size = <32>;
+			mmu-type = "riscv,sv39,sv39x4";
+			next-level-cache = <&L3>;
+			reg = <0x5>;
+			riscv,isa = "rv64imafdc";
+			riscv,pmpgranularity = <4096>;
+			riscv,pmpregions = <8>;
+			status = "okay";
+			timebase-frequency = <1000000>;
+			tlb-split;
+			L19: interrupt-controller {
+				#interrupt-cells = <1>;
+				compatible = "riscv,cpu-intc";
+				interrupt-controller;
+			};
+		};
+	};
+	L25: memory@80000000 {
+		device_type = "memory";
+		reg = <0x0 0x80000000 0x1 0x0>;
+	};
+	L45: soc {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "freechips,rocketchip-unknown-soc", "simple-bus";
+		ranges;
+		L29: boot-address-reg@4000 {
+			reg = <0x0 0x4000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L3: cache-controller@2010000 {
+			cache-block-size = <64>;
+			cache-level = <2>;
+			cache-sets = <1024>;
+			cache-size = <524288>;
+			cache-unified;
+			compatible = "sifive,inclusivecache0", "cache";
+			next-level-cache = <&L25>;
+			reg = <0x0 0x2010000 0x0 0x1000>;
+			reg-names = "control";
+			sifive,mshr-count = <7>;
+		};
+		L23: clint@2000000 {
+			compatible = "riscv,clint0";
+			interrupts-extended = <&L4 3 &L4 7 &L7 3 &L7 7 &L10 3 &L10 7 &L13 3 &L13 7 &L16 3 &L16 7 &L19 3 &L19 7>;
+			reg = <0x0 0x2000000 0x0 0x10000>;
+			reg-names = "control";
+		};
+		L1: error-device@3000 {
+			compatible = "sifive,error0";
+			reg = <0x0 0x3000 0x0 0x1000>;
+		};
+		L38: gcd@2000 {
+			compatible = "ucbbar,gcd";
+			reg = <0x0 0x2000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L35: gpio@64002000 {
+			#gpio-cells = <2>;
+			#interrupt-cells = <2>;
+			clocks = <&L0>;
+			compatible = "sifive,gpio0", "sifive,gpio1";
+			gpio-controller;
+			interrupt-controller;
+			interrupt-parent = <&L22>;
+			interrupts = <6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36>;
+			reg = <0x0 0x64002000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L30: i2c@64005000 {
+			clocks = <&L0>;
+			compatible = "sifive,i2c0";
+			interrupt-parent = <&L22>;
+			interrupts = <1>;
+			reg = <0x0 0x64005000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L31: i2c@64007000 {
+			clocks = <&L0>;
+			compatible = "sifive,i2c0";
+			interrupt-parent = <&L22>;
+			interrupts = <2>;
+			reg = <0x0 0x64007000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L22: interrupt-controller@c000000 {
+			#interrupt-cells = <1>;
+			compatible = "riscv,plic0";
+			interrupt-controller;
+			interrupts-extended = <&L4 11 &L4 9 &L7 11 &L7 9 &L10 11 &L10 9 &L13 11 &L13 9 &L16 11 &L16 9 &L19 11 &L19 9>;
+			reg = <0x0 0xc000000 0x0 0x4000000>;
+			reg-names = "control";
+			riscv,max-priority = <7>;
+			riscv,ndev = <40>;
+		};
+		L39: nvdla@10040000 {
+			compatible = "nvidia,nv_small";
+			interrupt-parent = <&L22>;
+			interrupts = <39>;
+			reg = <0x0 0x10040000 0x0 0x40000>;
+			reg-names = "control";
+		};
+		L40: pci@2000000000 {
+			#address-cells = <3>;
+			#interrupt-cells = <1>;
+			#size-cells = <2>;
+			compatible = "xlnx,axi-pcie-host-1.00.a";
+			device_type = "pci";
+			interrupt-map = <0 0 0 1 &pcie_intc 1 0 0 0 2 &pcie_intc 2 0 0 0 3 &pcie_intc 3 0 0 0 4 &pcie_intc 4>;
+			interrupt-map-mask = <0 0 0 7>;
+			interrupt-parent = <&L22>;
+			interrupts = <40>;
+			ranges = <0x2000000 0x0 0x40000000 0x0 0x40000000 0x0 0x20000000>;
+			reg = <0x20 0x0 0x0 0x4000000>;
+			reg-names = "control";
+			pcie_intc: interrupt-controller {
+				#address-cells = <0>;
+				#interrupt-cells = <1>;
+				interrupt-controller;
+			};
+		};
+		L28: rom@78000000 {
+			compatible = "sifive,rom0";
+			reg = <0x0 0x78000000 0x0 0x10000>;
+			reg-names = "mem";
+		};
+		L32: serial@64000000 {
+			clocks = <&L0>;
+			compatible = "sifive,uart0";
+			interrupt-parent = <&L22>;
+			interrupts = <3>;
+			reg = <0x0 0x64000000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L33: serial@64003000 {
+			clocks = <&L0>;
+			compatible = "sifive,uart0";
+			interrupt-parent = <&L22>;
+			interrupts = <4>;
+			reg = <0x0 0x64003000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L34: serial@64006000 {
+			clocks = <&L0>;
+			compatible = "sifive,uart0";
+			interrupt-parent = <&L22>;
+			interrupts = <5>;
+			reg = <0x0 0x64006000 0x0 0x1000>;
+			reg-names = "control";
+		};
+		L36: spi@64001000 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			clocks = <&L0>;
+			compatible = "sifive,spi0";
+			interrupt-parent = <&L22>;
+			interrupts = <37>;
+			reg = <0x0 0x64001000 0x0 0x1000>;
+			reg-names = "control";
+			L48: mmc@0 {
+				compatible = "mmc-spi-slot";
+				disable-wp;
+				reg = <0x0>;
+				spi-max-frequency = <5000000>;
+				voltage-ranges = <3300 3300>;
+			};
+		};
+		L37: spi@64004000 {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			clocks = <&L0>;
+			compatible = "sifive,spi0";
+			interrupt-parent = <&L22>;
+			interrupts = <38>;
+			reg = <0x0 0x64004000 0x0 0x1000>;
+			reg-names = "control";
+			L49: mmc@0 {
+				compatible = "mmc-spi-slot";
+				disable-wp;
+				reg = <0x0>;
+				spi-max-frequency = <5000000>;
+				voltage-ranges = <3300 3300>;
+			};
+		};
+		L2: subsystem_mbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <50000000>;
+			clock-output-names = "subsystem_mbus_clock";
+			compatible = "fixed-clock";
+		};
+		L0: subsystem_pbus_clock {
+			#clock-cells = <0>;
+			clock-frequency = <50000000>;
+			clock-output-names = "subsystem_pbus_clock";
+			compatible = "fixed-clock";
+		};
+		L42: tile-reset-ctrl@100000 {
+			reg = <0x0 0x100000 0x0 0x1000>;
+			reg-names = "control";
+		};
+	};
+};
