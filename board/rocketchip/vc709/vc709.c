@@ -47,16 +47,16 @@ int board_late_init(void)
 // override weak functions in arch/riscv/lib/cache.c
 void flush_dcache_all(void)
 {
-	FLUSH_D_ALL();
+//	FLUSH_D_ALL();
 }
 
 void flush_dcache_range(unsigned long start, unsigned long end)
 {
-	start = (start >> 6) * 64;
-	end = (end >> 6) * 64;
-	for (unsigned long addr = start; addr <= end; addr = addr + 64)
-	{
-		FLUSH_D_REG(addr);
-	}
+//	start = (start >> 6) * 64;
+//	end = (end >> 6) * 64;
+//	for (unsigned long addr = start; addr <= end; addr = addr + 64)
+//	{
+//		FLUSH_D_REG(addr);
+//	}
 }
 
