@@ -11,6 +11,8 @@
 		serial2 = &L34;
 	};
 	L41: chosen {
+		bootargs = "root=/dev/mmcblk0p4 rw noinitrd console=ttySIF0,921600 init=/usr/lib/systemd/systemd cma=1024M@0-4G";
+		stdout-path = "serial0:921600n8";
 	};
 	L46: cpus {
 		#address-cells = <1>;
