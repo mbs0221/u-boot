@@ -6,7 +6,7 @@
 #define CONFIG_SYS_SDRAM_BASE			0x80000000
 // do not collide with OpenSBI and U-Boot data
 #define CONFIG_SYS_INIT_SP_ADDR         (CONFIG_SYS_SDRAM_BASE + SZ_2M)
-// loaded by OpenSBI at 0x80020000
+// loaded by OpenSBI at 0x80200000
 #define CONFIG_SYS_LOAD_ADDR            (CONFIG_SYS_SDRAM_BASE + SZ_2M)
 
 #define CONFIG_SYS_MALLOC_LEN			SZ_8M
@@ -50,8 +50,11 @@
         "initrd_high=0xffffffffffffffff\0" \
         "kernel_addr_r=0x84000000\0" \
         "fdt_addr_r=0x82200000\0" \
-        "kernel_comp_addr_r=0x90000000\0" \
-        "kernel_comp_size=0x4000000\0" \
+        "scriptaddr=0x88100000\0" \
+        "script_offset_f=0x1fff000\0" \
+        "script_size_f=0x1000\0" \
+        "pxefile_addr_r=0x88200000\0" \
+        "ramdisk_addr_r=0x88300000\0" \
         "type_guid_gpt_loader1=" TYPE_GUID_LOADER1 "\0" \
         "type_guid_gpt_loader2=" TYPE_GUID_LOADER2 "\0" \
         "type_guid_gpt_system=" TYPE_GUID_SYSTEM "\0" \
