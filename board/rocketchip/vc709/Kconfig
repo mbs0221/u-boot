@@ -13,7 +13,15 @@ config SYS_CONFIG_NAME
 	default "vc709"
 
 config SYS_TEXT_BASE
-	default 0x80000000
+        default 0x80200000 if SPL 
+        default 0x80000000 if !RISCV_SMODE
+        default 0x80200000 if RISCV_SMODE
+
+config SPL_TEXT_BASE
+        default 0x08000000
+
+config SPL_OPENSBI_LOAD_ADDR
+        default 0x80000000
 
 config BOARD_SPECIFIC_OPTIONS # dummy
 	def_bool y
