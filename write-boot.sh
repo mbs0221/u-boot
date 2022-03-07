@@ -1,0 +1,1 @@
+/nfsroot/build-riscv/write-boot.sh
