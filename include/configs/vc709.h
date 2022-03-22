@@ -34,14 +34,14 @@
 
 #define CONFIG_SYS_BOOTM_LEN		SZ_64M
 
-#define CONFIG_STANDALONE_LOAD_ADDR		0x80200000
+#define CONFIG_STANDALONE_LOAD_ADDR	0x80200000
 
-#define RISCV_MMODE_TIMERBASE			0x2000000
-#define RISCV_MMODE_TIMER_FREQ 			1000000
+#define RISCV_MMODE_TIMERBASE		0x2000000
+#define RISCV_MMODE_TIMER_FREQ 		1000000
 
 #define CONFIG_ENV_IS_NOWHERE 1
 
-#define RISCV_SMODE_TIMER_FREQ			1000000
+#define RISCV_SMODE_TIMER_FREQ		1000000
 
 /* SPI */
 #define CONFIG_SPI_FLASH_SIZE		(32 << 30)
@@ -52,7 +52,7 @@
 
 #define BOOT_TARGET_DEVICES(func) \
 	func(MMC, mmc, 0) \
-	func(MMC, mmc, 1) \
+
 
 #include <config_distro_bootcmd.h>
 #include <environment/distro/sf.h>
@@ -63,14 +63,18 @@
 
 #define PARTS_DEFAULT \
 	"name=loader1,size=128KB,type=${type_guid_gpt_loader1};" \
-	"name=loader2,size=36MB,type=${type_guid_gpt_loader2};" \
+	"name=loader2,size=4MB,type=${type_guid_gpt_loader2};" \
 	"name=system,size=-,bootable,type=${type_guid_gpt_system};"
 
 
 #define CONFIG_EXTRA_ENV_SETTINGS \
+	"fdt_high=0xffffffffffffffff\0" \
+	"initrd_high=0xffffffffffffffff\0" \
 	"kernel_addr_r=0x84000000\0" \
-	"fdt_addr_r=0x82200000\0" \
+	"fdt_addr_r=0xffe00000\0" \
 	"scriptaddr=0x88100000\0" \
+	"script_offset_f=0x1fff000\0" \
+	"script_size_f=0x1000\0" \
 	"pxefile_addr_r=0x88200000\0" \
 	"ramdisk_addr_r=0x88300000\0" \
 	"kernel_comp_addr_r=0x90000000\0" \
